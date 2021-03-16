@@ -5,9 +5,10 @@ import org.junit.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.core.Is.*;
 
-public class ExampleTest {
+public class ReacentlyUsedListShould {
+
 	@Test 
-	public void canAnswerTheUniversalQuestion() {
-		assertThat(new Example().answer(), is(42));
+	public void initializeEmpty() {
+		assertThat(new RecentlyUsedList().getList(), is([]));
 	}
 }
