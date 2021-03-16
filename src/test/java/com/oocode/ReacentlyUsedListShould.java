@@ -35,4 +35,16 @@ public class ReacentlyUsedListShould {
 		recentlyUsedList.add("0899777666");
 		assertThat(recentlyUsedList.getList(), is(List.of("0899777666","0dsfsd666" )));
 	}
+
+	@Test
+	public void haveUniqueItems (){
+		RecentlyUsedList recentlyUsedList = new RecentlyUsedList();
+		recentlyUsedList.add("FirstItem");
+		recentlyUsedList.add("SecondItem");
+		recentlyUsedList.add("ThirdItem");
+		recentlyUsedList.add("FirstItem");
+		assertThat(recentlyUsedList.getList(), is(List.of("FirstItem","ThirdItem","SecondItem")));
+
+	}
+
 }

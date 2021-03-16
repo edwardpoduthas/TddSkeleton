@@ -2,6 +2,7 @@ package com.oocode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class RecentlyUsedList {
@@ -9,7 +10,7 @@ public class RecentlyUsedList {
     private List<String> recUsedList;
 
     public RecentlyUsedList() {
-        recUsedList = new ArrayList<String>() ;
+        recUsedList = new LinkedList<String>() ;
     }
 
     public List<String> getList(){
@@ -17,7 +18,10 @@ public class RecentlyUsedList {
     }
 
     public void add(String item) {
-        recUsedList.add(item);
+        List<String> tmpList = new LinkedList<String>();
+        tmpList.add(item);
+        tmpList.addAll(recUsedList);
+        recUsedList=tmpList;
     }
 
     public String getItem() {
