@@ -19,6 +19,9 @@ public class RecentlyUsedList {
 
     public void add(String item) {
         List<String> tmpList = new LinkedList<String>();
+        if(recUsedList.contains(item)){
+            recUsedList.remove(item);
+        }
         tmpList.add(item);
         tmpList.addAll(recUsedList);
         recUsedList=tmpList;
