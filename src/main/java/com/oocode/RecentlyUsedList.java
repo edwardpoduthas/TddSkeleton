@@ -21,6 +21,6 @@ public class RecentlyUsedList {
     }
 
     public String getItem() {
-        return null;
+        return recUsedList.get(0);
     }
 }
